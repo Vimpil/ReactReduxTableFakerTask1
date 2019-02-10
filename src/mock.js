@@ -25,7 +25,8 @@ const getAllProperties = (n) => {
 const properties = getAllProperties(200);
 
 
-export default Rx.Observable
+export default Rx.Observable  
+
   .interval(1000)
   .mergeMap(
     () => Rx.Observable
