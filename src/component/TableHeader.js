@@ -1,34 +1,54 @@
 import React, { Component } from 'react';
-import TableRowMap, { HEAD_NAMES } from './TableRowHeaderMap';
 
- class TableHeader extends Component {
 
-    constructor(props) {
 
-      super(props);  
-      this.name="name";
+class TableRowHeaderMap extends Component {
+	
+	constructor(props) {
+		
+	 	super(props);
+		 this.TableHeader = this.TableHeader.bind(this);
+		 this.OrderTheTable = this.OrderTheTable.bind(this);
+	}
 
-      this.state = {
+	OrderTheTable(number){
+		
 
-        head_names: HEAD_NAMES,
+		return alert(number.toString());
+	}
 
-      };
+	Button(){
+		
+		return
+	}
+	
+	TableHeader(){
+		var head_names = ['ID','Address','Price','Last Update','Type','Is in favorite'];		
+		const HEAD_NAMES = head_names.map((number) =>		 
+		<th key={number.toString()}><button onClick={()=>this.OrderTheTable(number)} type="button"> {number}</button></th>    
+		);
 
-    }
+		return HEAD_NAMES;
+	}
 
-    render() {
-      return (
+	
 
-      	<thead>
-          <tr>
+	render() {
+		
 
-           {this.state.head_names}
+		return (
 
-          </tr>
-        </thead>
+			<thead>
+				<tr>
 
-      );
-    }
+				 <this.TableHeader/>
 
-}
-export default TableHeader;
+				</tr>
+			</thead>
+
+		);
+	}
+
+ }
+
+export default TableRowHeaderMap;

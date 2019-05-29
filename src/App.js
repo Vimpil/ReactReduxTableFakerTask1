@@ -13,8 +13,18 @@ class App extends Component {
   }
 
   componentDidMount() {
+    var i=0;
     properties$.subscribe((data) => {
-      // console.log('data', data);
+            
+      if(i==0){
+        console.log('data', data);
+      i=1;
+      }
+      
+      // 
+
+      
+
     })
   }
 
